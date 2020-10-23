@@ -13,6 +13,7 @@ class Menu extends React.Component {
             <div className="container">
                 <h3 className="row">{this.props.title}</h3>
                 <div className="row">
+                    
                 <div className="col-7">
                     {this.props.food.filter((item, index) => {
 
@@ -22,19 +23,19 @@ class Menu extends React.Component {
                             }
                         }
                         else if (this.props.title === "Dinner") {
-                            if (index > 4 && index < 10) {
+                            if (index > 4 && index < 12) {
                                 return item;
                             }
                         } else if (this.props.title === "Breakfast") {
-                            if (index > 9 && index < 15) {
+                            if (index > 11 && index < 16) {
                                 return item;
                             }
                         } else if (this.props.title === "Dessert") {
-                            if (index > 14 && index < 20) {
+                            if (index > 15 && index < 22) {
                                 return item;
                             }
                         } else if (this.props.title === "Snacks") {
-                            if (index > 19 && index < 25) {
+                            if (index > 21 && index < 25) {
                                 return item;
                             }
                         }
@@ -53,19 +54,19 @@ class Menu extends React.Component {
                             }
                         }
                         else if (this.props.title === "Dinner") {
-                            if (index > 4 && index < 10) {
+                            if (index > 4 && index < 12) {
                                 return item;
                             }
                         } else if (this.props.title === "Breakfast") {
-                            if (index > 9 && index < 15) {
+                            if (index > 11 && index < 16) {
                                 return item;
                             }
                         } else if (this.props.title === "Dessert") {
-                            if (index > 14 && index < 20) {
+                            if (index > 15 && index < 22) {
                                 return item;
                             }
                         } else if (this.props.title === "Snacks") {
-                            if (index > 19 && index < 25) {
+                            if (index > 21 && index < 25) {
                                 return item;
                             }
                         }
