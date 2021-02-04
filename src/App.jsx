@@ -11,7 +11,7 @@ class App extends React.Component {
       dishes: [],
       prices: [],
       buttonClicked: "Lunch",
-      render: false
+      
     }
     this.generatePrice = this.generatePrice.bind(this)
     this.handleButtonClick = this.handleButtonClick.bind(this)
