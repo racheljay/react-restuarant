@@ -43,8 +43,13 @@ class App extends React.Component {
       axios.get(`https://entree-f18.herokuapp.com/v1/menu/25`)
         .then(res => {
           const dishes = res.data.menu_items;
-          console.log(dishes)
+          console.log("dishes",dishes)
           let prices = this.generatePrice()
+          //put the prices into the food object
+          for(let i = 0; i < dishes.length; i ++) {
+            dishes[i].price = prices[i]
+          }
+
           window.localStorage.setItem("food", JSON.stringify(dishes))
           window.localStorage.setItem('price', JSON.stringify(prices))
           this.setState({
@@ -82,7 +87,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
           <div className="navbar-brand">Firebase Hotel and Casino</div>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -113,14 +118,14 @@ class App extends React.Component {
           </div>
         </nav>
 
-        <div className="container">
-          <div className="row">
+        <div className="container mt-5">
+          
 
 
-            <h1>
+            <h1 className="mt-5">
               Firebase Hotel And Casino
             </h1>
-          </div>
+          
 
           <Menu
             food={this.state.dishes}
@@ -136,7 +141,7 @@ class App extends React.Component {
             {/* <div className="card-header">
               Featured
             </div> */}
-            <div className="card-body bg-dark text-light">
+            <div className="card-body bg-dark text-light d-none d-sm-inline">
               <h5 className="card-title">Firebase Hotel and Casino:</h5>
               <p className="card-text">
                 348 E Main St, Lexington, KY<br />
